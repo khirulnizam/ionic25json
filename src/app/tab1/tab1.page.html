@@ -1,0 +1,25 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Insert New Training
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <!-- tab1.page.html-->
+  <ion-card>
+      <form [formGroup]="formtraining"
+      (ngSubmit)="savetraining()">
+      <ion-input formControlName="id" 
+      placeholder="id" type="text"></ion-input>
+      <ion-input formControlName="trainingname" 
+      placeholder="Training Name" type="text"></ion-input>
+      <ion-input formControlName="contact" 
+      placeholder="Phone Contact" type="tel"></ion-input>
+      <ion-input formControlName="description" 
+      placeholder="Description" type="text"></ion-input>
+      <ion-button type="submit">Submit</ion-button>
+    </form>                 
+  </ion-card>
+</ion-content>
