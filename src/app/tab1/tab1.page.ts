@@ -29,6 +29,26 @@ export class Tab1Page {
       }
     );
   }//end constructor
+
+
+  trainings:any[]=[];
+  ngOnInit(){
+    //fetch data from online db
+    this.http.get<any[]>('http://localhost/tms/traininglist.php')
+    .subscribe(
+    response=>{
+      this.trainings=response; //remove response.map
+      console.log("Data : "+JSON.stringify(this.trainings));
+    },
+    error=>{
+      //error
+      console.log("Error: "+error);
+    });
+  }//end ngOnInit()
+
+
+
+
   //filename tab1.page.ts
 
   savetraining(){

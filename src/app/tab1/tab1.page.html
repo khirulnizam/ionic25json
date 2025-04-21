@@ -22,4 +22,29 @@
       <ion-button type="submit">Submit</ion-button>
     </form>                 
   </ion-card>
+
+  <ion-card>
+    <ion-card-header>
+    <H1>Training Listing </H1>
+    </ion-card-header>
+      <ion-card-content>
+        <ion-list *ngIf="trainings.length> 0">
+        <ion-item>
+          <ion-label>ID</ion-label>
+          <ion-label>Training Name</ion-label>
+          <ion-label>COntact</ion-label>
+          <ion-label>Description</ion-label>
+        </ion-item>
+        <ion-item *ngFor="let training of trainings" class="ion-text-center">
+          <ion-label> {{ training.id }}</ion-label>
+          <ion-label> {{ training.trainingname }}</ion-label>
+          <ion-label> {{ training.contact }}</ion-label>
+          <ion-label> {{ training.description }}</ion-label>
+
+        </ion-item>
+        
+        </ion-list>
+      </ion-card-content>
+    </ion-card>
+    
 </ion-content>
