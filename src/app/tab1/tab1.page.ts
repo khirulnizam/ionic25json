@@ -34,7 +34,7 @@ export class Tab1Page {
   trainings:any[]=[];
   ngOnInit(){
     //fetch data from online db
-    this.http.get<any[]>('http://localhost/tms/traininglist.php')
+    this.http.get<any[]>('http://localhost/tmsjsonphp/traininglist.php')
     .subscribe(
     response=>{
       this.trainings=response; //remove response.map
@@ -52,7 +52,7 @@ export class Tab1Page {
   //filename tab1.page.ts
 
   savetraining(){
-    this.urlinsert="http://localhost/tms/inserttrainingjson.php";
+    this.urlinsert="http://localhost/tmsjsonphp/inserttrainingjson.php";
     this.jsondata={
       'id':this.formtraining.value.id,
       'trainingname':this.formtraining.value.trainingname,
