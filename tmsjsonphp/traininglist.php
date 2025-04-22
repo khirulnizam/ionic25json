@@ -15,9 +15,9 @@ $result=mysqli_query($db, $sql);
 if ($result) {
     $trainings = array();
     while ($row = mysqli_fetch_assoc($result)) {
-        $aduan[] = $row;
+        $training[] = $row;
     }
-    echo json_encode($aduan);
+    echo json_encode($training);
 } else {
     echo json_encode(array("success" => false, "error" =>
     mysqli_error($db)));
